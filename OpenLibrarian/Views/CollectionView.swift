@@ -13,7 +13,6 @@ struct CollectionView: View {
 
     init(type: ReadingLogType) {
         let typeString = type.rawValue
-
         var upcomingTrips = FetchDescriptor<CollectionItem>(predicate: #Predicate { $0.type == typeString })
         upcomingTrips.includePendingChanges = true
         _items = Query(upcomingTrips)

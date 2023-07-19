@@ -12,13 +12,20 @@
 		9217293C2A4374880016C18E /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217293B2A4374880016C18E /* CollectionView.swift */; };
 		9294C3122A3A3A1F00135954 /* OpenLibrarianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */; };
 		9294C3142A3A3A1F00135954 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3132A3A3A1F00135954 /* CollectionItem.swift */; };
-		9294C3162A3A3A1F00135954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3152A3A3A1F00135954 /* ContentView.swift */; };
+		9294C3162A3A3A1F00135954 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3152A3A3A1F00135954 /* MainView.swift */; };
 		9294C3182A3A3A2000135954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9294C3172A3A3A2000135954 /* Assets.xcassets */; };
 		9294C31C2A3A3A2000135954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9294C31B2A3A3A2000135954 /* Preview Assets.xcassets */; };
 		9294C3262A3A3A2000135954 /* OpenLibrarianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3252A3A3A2000135954 /* OpenLibrarianTests.swift */; };
 		9294C3302A3A3A2000135954 /* OpenLibrarianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C32F2A3A3A2000135954 /* OpenLibrarianUITests.swift */; };
 		9294C3322A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3312A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift */; };
 		9294C3452A3A3E4300135954 /* OpenLibraryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9294C3442A3A3E4300135954 /* OpenLibraryKit */; };
+		92A295C92A67C4B900ADAF10 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92A295C72A67C4B900ADAF10 /* README.md */; };
+		92A295CA2A67C4B900ADAF10 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 92A295C82A67C4B900ADAF10 /* LICENSE */; };
+		92A295CE2A67C63C00ADAF10 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A295CD2A67C63C00ADAF10 /* RatingView.swift */; };
+		92A295D02A67C64F00ADAF10 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A295CF2A67C64F00ADAF10 /* StarsView.swift */; };
+		92A295D22A67CB3E00ADAF10 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A295D12A67CB3E00ADAF10 /* LibraryView.swift */; };
+		92A295D42A67D27000ADAF10 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A295D32A67D27000ADAF10 /* AccountView.swift */; };
+		92A295D62A67D28600ADAF10 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A295D52A67D28600ADAF10 /* DiscoverView.swift */; };
 		92B03AC02A3F684500BF0E28 /* LoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */; };
 		92B03AC22A3F6B5900BF0E28 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B03AC12A3F6B5900BF0E28 /* BookView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +54,7 @@
 		9294C30E2A3A3A1F00135954 /* OpenLibrarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLibrarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianApp.swift; sourceTree = "<group>"; };
 		9294C3132A3A3A1F00135954 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
-		9294C3152A3A3A1F00135954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9294C3152A3A3A1F00135954 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9294C3172A3A3A2000135954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9294C3192A3A3A2000135954 /* OpenLibrarian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenLibrarian.entitlements; sourceTree = "<group>"; };
 		9294C31B2A3A3A2000135954 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -56,6 +63,13 @@
 		9294C32B2A3A3A2000135954 /* OpenLibrarianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenLibrarianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C32F2A3A3A2000135954 /* OpenLibrarianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianUITests.swift; sourceTree = "<group>"; };
 		9294C3312A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		92A295C72A67C4B900ADAF10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		92A295C82A67C4B900ADAF10 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		92A295CD2A67C63C00ADAF10 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		92A295CF2A67C64F00ADAF10 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		92A295D12A67CB3E00ADAF10 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		92A295D32A67D27000ADAF10 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		92A295D52A67D28600ADAF10 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSheet.swift; sourceTree = "<group>"; };
 		92B03AC12A3F6B5900BF0E28 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +103,8 @@
 		9294C3052A3A3A1F00135954 = {
 			isa = PBXGroup;
 			children = (
+				92A295C82A67C4B900ADAF10 /* LICENSE */,
+				92A295C72A67C4B900ADAF10 /* README.md */,
 				9294C3102A3A3A1F00135954 /* OpenLibrarian */,
 				9294C3242A3A3A2000135954 /* OpenLibrarianTests */,
 				9294C32E2A3A3A2000135954 /* OpenLibrarianUITests */,
@@ -110,17 +126,13 @@
 		9294C3102A3A3A1F00135954 /* OpenLibrarian */ = {
 			isa = PBXGroup;
 			children = (
+				92A295CC2A67C5B200ADAF10 /* Views */,
+				92A295CB2A67C5A400ADAF10 /* Models */,
 				9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */,
-				9294C3132A3A3A1F00135954 /* CollectionItem.swift */,
-				9294C3152A3A3A1F00135954 /* ContentView.swift */,
 				9294C3172A3A3A2000135954 /* Assets.xcassets */,
 				9294C3192A3A3A2000135954 /* OpenLibrarian.entitlements */,
 				9294C31A2A3A3A2000135954 /* Preview Content */,
-				92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */,
-				92B03AC12A3F6B5900BF0E28 /* BookView.swift */,
 				921729372A435C1E0016C18E /* LibraryRepository.swift */,
-				921729392A4360750016C18E /* CollectionItemListView.swift */,
-				9217293B2A4374880016C18E /* CollectionView.swift */,
 			);
 			path = OpenLibrarian;
 			sourceTree = "<group>";
@@ -155,6 +167,31 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92A295CB2A67C5A400ADAF10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9294C3132A3A3A1F00135954 /* CollectionItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92A295CC2A67C5B200ADAF10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92B03AC12A3F6B5900BF0E28 /* BookView.swift */,
+				92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */,
+				9294C3152A3A3A1F00135954 /* MainView.swift */,
+				921729392A4360750016C18E /* CollectionItemListView.swift */,
+				9217293B2A4374880016C18E /* CollectionView.swift */,
+				92A295CD2A67C63C00ADAF10 /* RatingView.swift */,
+				92A295CF2A67C64F00ADAF10 /* StarsView.swift */,
+				92A295D12A67CB3E00ADAF10 /* LibraryView.swift */,
+				92A295D32A67D27000ADAF10 /* AccountView.swift */,
+				92A295D52A67D28600ADAF10 /* DiscoverView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +304,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A295C92A67C4B900ADAF10 /* README.md in Resources */,
 				9294C31C2A3A3A2000135954 /* Preview Assets.xcassets in Resources */,
+				92A295CA2A67C4B900ADAF10 /* LICENSE in Resources */,
 				9294C3182A3A3A2000135954 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,11 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A295D62A67D28600ADAF10 /* DiscoverView.swift in Sources */,
+				92A295D42A67D27000ADAF10 /* AccountView.swift in Sources */,
+				92A295D02A67C64F00ADAF10 /* StarsView.swift in Sources */,
 				9294C3142A3A3A1F00135954 /* CollectionItem.swift in Sources */,
 				92B03AC02A3F684500BF0E28 /* LoginSheet.swift in Sources */,
 				9217293A2A4360750016C18E /* CollectionItemListView.swift in Sources */,
+				92A295CE2A67C63C00ADAF10 /* RatingView.swift in Sources */,
 				9294C3122A3A3A1F00135954 /* OpenLibrarianApp.swift in Sources */,
-				9294C3162A3A3A1F00135954 /* ContentView.swift in Sources */,
+				9294C3162A3A3A1F00135954 /* MainView.swift in Sources */,
+				92A295D22A67CB3E00ADAF10 /* LibraryView.swift in Sources */,
 				92B03AC22A3F6B5900BF0E28 /* BookView.swift in Sources */,
 				9217293C2A4374880016C18E /* CollectionView.swift in Sources */,
 				921729382A435C1E0016C18E /* LibraryRepository.swift in Sources */,

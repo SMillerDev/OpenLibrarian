@@ -11,9 +11,8 @@ import OpenLibraryKit
 
 fileprivate enum NavigationTabs: Int {
     case library = 0
-    case currentlyReading = 1
-    case read = 2
-    case user = 3
+    case discover = 1
+    case user = 2
 }
 
 struct ContentView: View {
@@ -33,23 +32,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $tab) {
-                CollectionView(type: ReadingLogType.wanted)
-                    .tabItem {
-                        Label("Library", systemImage: "books.vertical")
-                    }.tag(0)
-                CollectionView(type: ReadingLogType.reading)
-                    .tabItem {
-                        Label("Currently Reading", systemImage: "book")
-                    }.tag(1)
-                CollectionView(type: ReadingLogType.read)
-                    .tabItem {
-                        Label("Read", systemImage: "book.closed")
-                    }.tag(2)
-                HStack {
-                    Text(username ?? "User")
-                }.tabItem {
+                LibraryView()
+                .tabItem {
+                    Label("Library", systemImage: "books.vertical")
+                }.tag(0)
+                DiscoverView(searchText: "")
+                .tabItem {
+                    Label("Discover", systemImage: "rectangle.and.text.magnifyingglass")
+                }.tag(1)
+                AccountView()
+                .tabItem {
                     Label(username ?? "User", systemImage: "person")
-                }.tag(3)
+                }.tag(2)
             }.navigationTitle(navigationTitle)
         }.task {
             guard username != nil else {
@@ -71,10 +65,8 @@ struct ContentView: View {
             switch tab {
             case NavigationTabs.library.rawValue:
                 navigationTitle = "library".capitalized
-            case NavigationTabs.currentlyReading.rawValue:
-                navigationTitle = "currently reading".capitalized
-            case NavigationTabs.read.rawValue:
-                navigationTitle = "read".capitalized
+            case NavigationTabs.discover.rawValue:
+                navigationTitle = "discover".capitalized
             case NavigationTabs.user.rawValue:
                 navigationTitle = username?.capitalized ?? "user".capitalized
             default:

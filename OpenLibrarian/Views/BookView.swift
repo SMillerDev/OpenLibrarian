@@ -20,7 +20,7 @@ struct BookView: View {
         ScrollView {
             VStack {
                 if let url = book.cover {
-                    AsyncImage(url: url, scale: 1)
+                    AsyncImage(url: url, scale: 1).padding(0)
                 }
                 HStack {
                     Text("By: ")
@@ -31,8 +31,10 @@ struct BookView: View {
                 if let start = book.start {
                     Text("Added on \(start, format: .dateTime)")
                 }
-                StarsView(maxRating: 5, id: book.workId).frame(width: 100, height: 20)
                 Text(bookDescription)
+//                GenreView()
+                RatingView(book: book)
+//                ReviewView()
             }
         }.navigationTitle(book.title)
             .navigationBarTitleDisplayMode(.automatic)
@@ -47,38 +49,5 @@ struct BookView: View {
                     debugPrint(notes)
                 }
             }
-    }
-}
-
-struct StarsView: View {
-    @State var rating: Double = 0
-    var maxRating: Int
-    let id: String
-
-    var body: some View {
-        let stars = HStack(spacing: 0) {
-            ForEach(0..<maxRating, id: \.self) { _ in
-                Image(systemName: "star.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
-        }
-
-        stars.overlay(
-            GeometryReader { g in
-                let width = CGFloat(rating) / CGFloat(maxRating) * g.size.width
-                ZStack(alignment: .leading) {
-                    Rectangle()
-                        .frame(width: width)
-                        .foregroundColor(.yellow)
-                }
-            }
-            .mask(stars)
-        )
-        .foregroundColor(.gray)
-        .task {
-            let rating = try? await OpenLibraryKit().books().ratings(id: id)
-            self.rating = rating?.summary.average ?? 0
-        }
     }
 }
