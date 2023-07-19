@@ -7,56 +7,95 @@
 
 import SwiftUI
 import SwiftData
+import OpenLibraryKit
+
+fileprivate enum NavigationTabs: Int {
+    case library = 0
+    case currentlyReading = 1
+    case read = 2
+    case user = 3
+}
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-    
+    @State var presentLogin: Bool = false
+    @State var tab: Int = 0
+    @State var pick: ReadingLogType = ReadingLogType.reading
+    @State var navigationTitle = "Library"
+    @AppStorage("username") var username: String?
+
+    let repository: LibraryRepository
+
+    init() {
+        repository = LibraryRepository()
+    }
+
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+            TabView(selection: $tab) {
+                CollectionView(type: ReadingLogType.wanted)
+                    .tabItem {
+                        Label("Library", systemImage: "books.vertical")
+                    }.tag(0)
+                CollectionView(type: ReadingLogType.reading)
+                    .tabItem {
+                        Label("Currently Reading", systemImage: "book")
+                    }.tag(1)
+                CollectionView(type: ReadingLogType.read)
+                    .tabItem {
+                        Label("Read", systemImage: "book.closed")
+                    }.tag(2)
+                HStack {
+                    Text(username ?? "User")
+                }.tabItem {
+                    Label(username ?? "User", systemImage: "person")
+                }.tag(3)
+            }.navigationTitle(navigationTitle)
+        }.task {
+            guard username != nil else {
+                presentLogin.toggle()
+                return
             }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            await repository.refreshLibrary(username: username).forEach { item in
+                modelContext.insert(item)
+            }
+        }.onChange(of: username) {
+            Task(priority: .background) {
+                await repository.refreshLibrary(username: username).forEach { item in
+                    modelContext.insert(item)
                 }
             }
-            Text("Select an item")
+            presentLogin.toggle()
+        }
+        .onChange(of: tab) {
+            switch tab {
+            case NavigationTabs.library.rawValue:
+                navigationTitle = "library".capitalized
+            case NavigationTabs.currentlyReading.rawValue:
+                navigationTitle = "currently reading".capitalized
+            case NavigationTabs.read.rawValue:
+                navigationTitle = "read".capitalized
+            case NavigationTabs.user.rawValue:
+                navigationTitle = username?.capitalized ?? "user".capitalized
+            default:
+                navigationTitle = "????"
+            }
+
+        }.refreshable {
+            await repository.refreshLibrary(username: username).forEach { item in
+                modelContext.insert(item)
+            }
+        }.sheet(isPresented: $presentLogin) {
+            LoginSheet()
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+    public func toggleLogin() {
+        presentLogin.toggle()
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: CollectionItem.self, inMemory: true)
+
 }

@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921729382A435C1E0016C18E /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921729372A435C1E0016C18E /* LibraryRepository.swift */; };
+		9217293A2A4360750016C18E /* CollectionItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921729392A4360750016C18E /* CollectionItemListView.swift */; };
+		9217293C2A4374880016C18E /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217293B2A4374880016C18E /* CollectionView.swift */; };
 		9294C3122A3A3A1F00135954 /* OpenLibrarianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */; };
-		9294C3142A3A3A1F00135954 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3132A3A3A1F00135954 /* Item.swift */; };
+		9294C3142A3A3A1F00135954 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3132A3A3A1F00135954 /* CollectionItem.swift */; };
 		9294C3162A3A3A1F00135954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3152A3A3A1F00135954 /* ContentView.swift */; };
 		9294C3182A3A3A2000135954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9294C3172A3A3A2000135954 /* Assets.xcassets */; };
 		9294C31C2A3A3A2000135954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9294C31B2A3A3A2000135954 /* Preview Assets.xcassets */; };
 		9294C3262A3A3A2000135954 /* OpenLibrarianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3252A3A3A2000135954 /* OpenLibrarianTests.swift */; };
 		9294C3302A3A3A2000135954 /* OpenLibrarianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C32F2A3A3A2000135954 /* OpenLibrarianUITests.swift */; };
 		9294C3322A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3312A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift */; };
+		9294C3452A3A3E4300135954 /* OpenLibraryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9294C3442A3A3E4300135954 /* OpenLibraryKit */; };
+		92B03AC02A3F684500BF0E28 /* LoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */; };
+		92B03AC22A3F6B5900BF0E28 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B03AC12A3F6B5900BF0E28 /* BookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921729372A435C1E0016C18E /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
+		921729392A4360750016C18E /* CollectionItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemListView.swift; sourceTree = "<group>"; };
+		9217293B2A4374880016C18E /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		9294C30E2A3A3A1F00135954 /* OpenLibrarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLibrarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianApp.swift; sourceTree = "<group>"; };
-		9294C3132A3A3A1F00135954 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9294C3132A3A3A1F00135954 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
 		9294C3152A3A3A1F00135954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9294C3172A3A3A2000135954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9294C3192A3A3A2000135954 /* OpenLibrarian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenLibrarian.entitlements; sourceTree = "<group>"; };
@@ -47,6 +56,8 @@
 		9294C32B2A3A3A2000135954 /* OpenLibrarianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenLibrarianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C32F2A3A3A2000135954 /* OpenLibrarianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianUITests.swift; sourceTree = "<group>"; };
 		9294C3312A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSheet.swift; sourceTree = "<group>"; };
+		92B03AC12A3F6B5900BF0E28 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9294C3452A3A3E4300135954 /* OpenLibraryKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +93,7 @@
 				9294C3242A3A3A2000135954 /* OpenLibrarianTests */,
 				9294C32E2A3A3A2000135954 /* OpenLibrarianUITests */,
 				9294C30F2A3A3A1F00135954 /* Products */,
+				9294C3432A3A3E4300135954 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +111,16 @@
 			isa = PBXGroup;
 			children = (
 				9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */,
-				9294C3132A3A3A1F00135954 /* Item.swift */,
+				9294C3132A3A3A1F00135954 /* CollectionItem.swift */,
 				9294C3152A3A3A1F00135954 /* ContentView.swift */,
 				9294C3172A3A3A2000135954 /* Assets.xcassets */,
 				9294C3192A3A3A2000135954 /* OpenLibrarian.entitlements */,
 				9294C31A2A3A3A2000135954 /* Preview Content */,
+				92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */,
+				92B03AC12A3F6B5900BF0E28 /* BookView.swift */,
+				921729372A435C1E0016C18E /* LibraryRepository.swift */,
+				921729392A4360750016C18E /* CollectionItemListView.swift */,
+				9217293B2A4374880016C18E /* CollectionView.swift */,
 			);
 			path = OpenLibrarian;
 			sourceTree = "<group>";
@@ -132,6 +150,13 @@
 			path = OpenLibrarianUITests;
 			sourceTree = "<group>";
 		};
+		9294C3432A3A3E4300135954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +173,9 @@
 			dependencies = (
 			);
 			name = OpenLibrarian;
+			packageProductDependencies = (
+				9294C3442A3A3E4300135954 /* OpenLibraryKit */,
+			);
 			productName = OpenLibrarian;
 			productReference = 9294C30E2A3A3A1F00135954 /* OpenLibrarian.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +248,9 @@
 				Base,
 			);
 			mainGroup = 9294C3052A3A3A1F00135954;
+			packageReferences = (
+				9294C3422A3A3E2100135954 /* XCLocalSwiftPackageReference "../OpenLibraryKit" */,
+			);
 			productRefGroup = 9294C30F2A3A3A1F00135954 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,9 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9294C3142A3A3A1F00135954 /* Item.swift in Sources */,
+				9294C3142A3A3A1F00135954 /* CollectionItem.swift in Sources */,
+				92B03AC02A3F684500BF0E28 /* LoginSheet.swift in Sources */,
+				9217293A2A4360750016C18E /* CollectionItemListView.swift in Sources */,
 				9294C3122A3A3A1F00135954 /* OpenLibrarianApp.swift in Sources */,
 				9294C3162A3A3A1F00135954 /* ContentView.swift in Sources */,
+				92B03AC22A3F6B5900BF0E28 /* BookView.swift in Sources */,
+				9217293C2A4374880016C18E /* CollectionView.swift in Sources */,
+				921729382A435C1E0016C18E /* LibraryRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +464,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenLibrarian;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -466,6 +504,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenLibrarian;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -621,6 +661,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9294C3422A3A3E2100135954 /* XCLocalSwiftPackageReference "../OpenLibraryKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../OpenLibraryKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9294C3442A3A3E4300135954 /* OpenLibraryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9294C3422A3A3E2100135954 /* XCLocalSwiftPackageReference "../OpenLibraryKit" */;
+			productName = OpenLibraryKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9294C3062A3A3A1F00135954 /* Project object */;
 }

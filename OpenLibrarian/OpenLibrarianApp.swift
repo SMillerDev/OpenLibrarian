@@ -10,11 +10,12 @@ import SwiftData
 
 @main
 struct OpenLibrarianApp: App {
+    
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Item.self)
+        .modelContainer(for: CollectionItem.self)
     }
 }
