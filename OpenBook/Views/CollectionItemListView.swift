@@ -1,11 +1,12 @@
 //
 //  CollectionItemView.swift
-//  OpenLibrarian
+//  OpenBook
 //
 //  Created by Sean Molenaar on 21/06/2023.
 //
 
 import SwiftUI
+import OpenLibraryKit
 
 struct CollectionItemListView: View {
     let title: String
@@ -14,8 +15,15 @@ struct CollectionItemListView: View {
 
     init(_ item: CollectionItem, thumbnail: Bool = false) {
         self.init(title: item.title,
-                  authors: item.authorNames,
+                  authors: item.authorNames ?? [],
                   image: thumbnail ? item.thumbnail : item.cover)
+    }
+
+    init(_ item: SearchResult) {
+        let id = item.coverId ?? 0
+        self.init(title: item.title,
+                  authors: item.authors ?? [],
+                  image: URL(string: "https://covers.openlibrary.org/b/id/\(id)-S.jpg?default=true"))
     }
 
     init (title: String, authors: [String], image: URL?) {

@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  OpenLibrarian
+//  OpenBook
 //
 //  Created by Sean Molenaar on 14/06/2023.
 //
@@ -23,10 +23,8 @@ struct ContentView: View {
     @State var navigationTitle = "Library"
     @AppStorage("username") var username: String?
 
-    let repository: LibraryRepository
-
     init() {
-        repository = LibraryRepository()
+//        self.username = nil
     }
 
     var body: some View {
@@ -36,7 +34,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Library", systemImage: "books.vertical")
                 }.tag(0)
-                DiscoverView(searchText: "")
+                DiscoverView()
                 .tabItem {
                     Label("Discover", systemImage: "rectangle.and.text.magnifyingglass")
                 }.tag(1)
@@ -50,15 +48,7 @@ struct ContentView: View {
                 presentLogin.toggle()
                 return
             }
-            await repository.refreshLibrary(username: username).forEach { item in
-                modelContext.insert(item)
-            }
         }.onChange(of: username) {
-            Task(priority: .background) {
-                await repository.refreshLibrary(username: username).forEach { item in
-                    modelContext.insert(item)
-                }
-            }
             presentLogin.toggle()
         }
         .onChange(of: tab) {
@@ -73,14 +63,11 @@ struct ContentView: View {
                 navigationTitle = "????"
             }
 
-        }.refreshable {
-            await repository.refreshLibrary(username: username).forEach { item in
-                modelContext.insert(item)
-            }
         }.sheet(isPresented: $presentLogin) {
             LoginSheet()
         }
     }
+
     public func toggleLogin() {
         presentLogin.toggle()
     }
@@ -88,6 +75,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: CollectionItem.self, inMemory: true)
-
 }

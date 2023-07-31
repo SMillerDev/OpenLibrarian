@@ -1,13 +1,13 @@
 //
-//  OpenLibrarianUITestsLaunchTests.swift
-//  OpenLibrarianUITests
+//  OpenBookUITestsLaunchTests.swift
+//  OpenBookUITests
 //
 //  Created by Sean Molenaar on 14/06/2023.
 //
 
 import XCTest
 
-final class OpenLibrarianUITestsLaunchTests: XCTestCase {
+final class OpenBookUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

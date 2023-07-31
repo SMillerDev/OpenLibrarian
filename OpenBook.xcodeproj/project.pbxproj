@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		921729382A435C1E0016C18E /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921729372A435C1E0016C18E /* LibraryRepository.swift */; };
+		92131E952A76D123009BB934 /* _BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92131E942A76D123009BB934 /* _BookInformationView.swift */; };
 		9217293A2A4360750016C18E /* CollectionItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921729392A4360750016C18E /* CollectionItemListView.swift */; };
 		9217293C2A4374880016C18E /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217293B2A4374880016C18E /* CollectionView.swift */; };
+		9231C5622A69AD52002CA42E /* TrendingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231C5612A69AD52002CA42E /* TrendingSection.swift */; };
+		9252E3F02A6EFC9B0003CE54 /* ReadingLogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9252E3EF2A6EFC9B0003CE54 /* ReadingLogType.swift */; };
+		9272F6C22A69B226007274AF /* SubjectsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9272F6C12A69B226007274AF /* SubjectsSection.swift */; };
+		9272F6C42A6A6E06007274AF /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9272F6C32A6A6E06007274AF /* SearchSection.swift */; };
+		9289BFF02A6BDDCC00CC6AEF /* DiscoveryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289BFEF2A6BDDCC00CC6AEF /* DiscoveryListItemView.swift */; };
 		9294C3122A3A3A1F00135954 /* OpenLibrarianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */; };
 		9294C3142A3A3A1F00135954 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3132A3A3A1F00135954 /* CollectionItem.swift */; };
 		9294C3162A3A3A1F00135954 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3152A3A3A1F00135954 /* MainView.swift */; };
@@ -19,6 +24,10 @@
 		9294C3302A3A3A2000135954 /* OpenLibrarianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C32F2A3A3A2000135954 /* OpenLibrarianUITests.swift */; };
 		9294C3322A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9294C3312A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift */; };
 		9294C3452A3A3E4300135954 /* OpenLibraryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9294C3442A3A3E4300135954 /* OpenLibraryKit */; };
+		9298C6F92A76D1A300D9FCE2 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298C6F82A76D1A300D9FCE2 /* GenreView.swift */; };
+		9298C6FD2A76D1F600D9FCE2 /* ReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298C6FA2A76D1F600D9FCE2 /* ReferenceView.swift */; };
+		9298C6FE2A76D1F600D9FCE2 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298C6FB2A76D1F600D9FCE2 /* LinksView.swift */; };
+		9298C6FF2A76D1F600D9FCE2 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9298C6FC2A76D1F600D9FCE2 /* ReviewView.swift */; };
 		92A295C92A67C4B900ADAF10 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92A295C72A67C4B900ADAF10 /* README.md */; };
 		92A295CA2A67C4B900ADAF10 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 92A295C82A67C4B900ADAF10 /* LICENSE */; };
 		92A295CE2A67C63C00ADAF10 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A295CD2A67C63C00ADAF10 /* RatingView.swift */; };
@@ -48,21 +57,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		921729372A435C1E0016C18E /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
+		92131E942A76D123009BB934 /* _BookInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _BookInformationView.swift; sourceTree = "<group>"; };
 		921729392A4360750016C18E /* CollectionItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItemListView.swift; sourceTree = "<group>"; };
 		9217293B2A4374880016C18E /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		9294C30E2A3A3A1F00135954 /* OpenLibrarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLibrarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9231C5612A69AD52002CA42E /* TrendingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingSection.swift; sourceTree = "<group>"; };
+		9252E3EF2A6EFC9B0003CE54 /* ReadingLogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingLogType.swift; sourceTree = "<group>"; };
+		9272F6C12A69B226007274AF /* SubjectsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsSection.swift; sourceTree = "<group>"; };
+		9272F6C32A6A6E06007274AF /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
+		9289BFEF2A6BDDCC00CC6AEF /* DiscoveryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryListItemView.swift; sourceTree = "<group>"; };
+		9294C30E2A3A3A1F00135954 /* OpenBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianApp.swift; sourceTree = "<group>"; };
 		9294C3132A3A3A1F00135954 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
 		9294C3152A3A3A1F00135954 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9294C3172A3A3A2000135954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9294C3192A3A3A2000135954 /* OpenLibrarian.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenLibrarian.entitlements; sourceTree = "<group>"; };
+		9294C3192A3A3A2000135954 /* OpenBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenBook.entitlements; sourceTree = "<group>"; };
 		9294C31B2A3A3A2000135954 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9294C3212A3A3A2000135954 /* OpenLibrarianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenLibrarianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9294C3212A3A3A2000135954 /* OpenBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C3252A3A3A2000135954 /* OpenLibrarianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianTests.swift; sourceTree = "<group>"; };
-		9294C32B2A3A3A2000135954 /* OpenLibrarianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenLibrarianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9294C32B2A3A3A2000135954 /* OpenBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9294C32F2A3A3A2000135954 /* OpenLibrarianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianUITests.swift; sourceTree = "<group>"; };
 		9294C3312A3A3A2000135954 /* OpenLibrarianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibrarianUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9298C6F82A76D1A300D9FCE2 /* GenreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
+		9298C6FA2A76D1F600D9FCE2 /* ReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
+		9298C6FB2A76D1F600D9FCE2 /* LinksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
+		9298C6FC2A76D1F600D9FCE2 /* ReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		92A295C72A67C4B900ADAF10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		92A295C82A67C4B900ADAF10 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		92A295CD2A67C63C00ADAF10 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -105,7 +123,7 @@
 			children = (
 				92A295C82A67C4B900ADAF10 /* LICENSE */,
 				92A295C72A67C4B900ADAF10 /* README.md */,
-				9294C3102A3A3A1F00135954 /* OpenLibrarian */,
+				9294C3102A3A3A1F00135954 /* OpenBook */,
 				9294C3242A3A3A2000135954 /* OpenLibrarianTests */,
 				9294C32E2A3A3A2000135954 /* OpenLibrarianUITests */,
 				9294C30F2A3A3A1F00135954 /* Products */,
@@ -116,25 +134,24 @@
 		9294C30F2A3A3A1F00135954 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9294C30E2A3A3A1F00135954 /* OpenLibrarian.app */,
-				9294C3212A3A3A2000135954 /* OpenLibrarianTests.xctest */,
-				9294C32B2A3A3A2000135954 /* OpenLibrarianUITests.xctest */,
+				9294C30E2A3A3A1F00135954 /* OpenBook.app */,
+				9294C3212A3A3A2000135954 /* OpenBookTests.xctest */,
+				9294C32B2A3A3A2000135954 /* OpenBookUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9294C3102A3A3A1F00135954 /* OpenLibrarian */ = {
+		9294C3102A3A3A1F00135954 /* OpenBook */ = {
 			isa = PBXGroup;
 			children = (
 				92A295CC2A67C5B200ADAF10 /* Views */,
 				92A295CB2A67C5A400ADAF10 /* Models */,
 				9294C3112A3A3A1F00135954 /* OpenLibrarianApp.swift */,
 				9294C3172A3A3A2000135954 /* Assets.xcassets */,
-				9294C3192A3A3A2000135954 /* OpenLibrarian.entitlements */,
+				9294C3192A3A3A2000135954 /* OpenBook.entitlements */,
 				9294C31A2A3A3A2000135954 /* Preview Content */,
-				921729372A435C1E0016C18E /* LibraryRepository.swift */,
 			);
-			path = OpenLibrarian;
+			path = OpenBook;
 			sourceTree = "<group>";
 		};
 		9294C31A2A3A3A2000135954 /* Preview Content */ = {
@@ -173,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				9294C3132A3A3A1F00135954 /* CollectionItem.swift */,
+				9252E3EF2A6EFC9B0003CE54 /* ReadingLogType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +198,11 @@
 		92A295CC2A67C5B200ADAF10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9298C6FB2A76D1F600D9FCE2 /* LinksView.swift */,
+				9298C6FA2A76D1F600D9FCE2 /* ReferenceView.swift */,
+				9298C6FC2A76D1F600D9FCE2 /* ReviewView.swift */,
+				9298C6F82A76D1A300D9FCE2 /* GenreView.swift */,
+				92131E942A76D123009BB934 /* _BookInformationView.swift */,
 				92B03AC12A3F6B5900BF0E28 /* BookView.swift */,
 				92B03ABF2A3F684500BF0E28 /* LoginSheet.swift */,
 				9294C3152A3A3A1F00135954 /* MainView.swift */,
@@ -190,6 +213,10 @@
 				92A295D12A67CB3E00ADAF10 /* LibraryView.swift */,
 				92A295D32A67D27000ADAF10 /* AccountView.swift */,
 				92A295D52A67D28600ADAF10 /* DiscoverView.swift */,
+				9231C5612A69AD52002CA42E /* TrendingSection.swift */,
+				9272F6C12A69B226007274AF /* SubjectsSection.swift */,
+				9272F6C32A6A6E06007274AF /* SearchSection.swift */,
+				9289BFEF2A6BDDCC00CC6AEF /* DiscoveryListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9294C30D2A3A3A1F00135954 /* OpenLibrarian */ = {
+		9294C30D2A3A3A1F00135954 /* OpenBook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9294C3352A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenLibrarian" */;
+			buildConfigurationList = 9294C3352A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenBook" */;
 			buildPhases = (
 				9294C30A2A3A3A1F00135954 /* Sources */,
 				9294C30B2A3A3A1F00135954 /* Frameworks */,
@@ -209,17 +236,17 @@
 			);
 			dependencies = (
 			);
-			name = OpenLibrarian;
+			name = OpenBook;
 			packageProductDependencies = (
 				9294C3442A3A3E4300135954 /* OpenLibraryKit */,
 			);
 			productName = OpenLibrarian;
-			productReference = 9294C30E2A3A3A1F00135954 /* OpenLibrarian.app */;
+			productReference = 9294C30E2A3A3A1F00135954 /* OpenBook.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9294C3202A3A3A2000135954 /* OpenLibrarianTests */ = {
+		9294C3202A3A3A2000135954 /* OpenBookTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9294C3382A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenLibrarianTests" */;
+			buildConfigurationList = 9294C3382A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenBookTests" */;
 			buildPhases = (
 				9294C31D2A3A3A2000135954 /* Sources */,
 				9294C31E2A3A3A2000135954 /* Frameworks */,
@@ -230,14 +257,14 @@
 			dependencies = (
 				9294C3232A3A3A2000135954 /* PBXTargetDependency */,
 			);
-			name = OpenLibrarianTests;
+			name = OpenBookTests;
 			productName = OpenLibrarianTests;
-			productReference = 9294C3212A3A3A2000135954 /* OpenLibrarianTests.xctest */;
+			productReference = 9294C3212A3A3A2000135954 /* OpenBookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9294C32A2A3A3A2000135954 /* OpenLibrarianUITests */ = {
+		9294C32A2A3A3A2000135954 /* OpenBookUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9294C33B2A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenLibrarianUITests" */;
+			buildConfigurationList = 9294C33B2A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenBookUITests" */;
 			buildPhases = (
 				9294C3272A3A3A2000135954 /* Sources */,
 				9294C3282A3A3A2000135954 /* Frameworks */,
@@ -248,9 +275,9 @@
 			dependencies = (
 				9294C32D2A3A3A2000135954 /* PBXTargetDependency */,
 			);
-			name = OpenLibrarianUITests;
+			name = OpenBookUITests;
 			productName = OpenLibrarianUITests;
-			productReference = 9294C32B2A3A3A2000135954 /* OpenLibrarianUITests.xctest */;
+			productReference = 9294C32B2A3A3A2000135954 /* OpenBookUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -276,7 +303,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9294C3092A3A3A1F00135954 /* Build configuration list for PBXProject "OpenLibrarian" */;
+			buildConfigurationList = 9294C3092A3A3A1F00135954 /* Build configuration list for PBXProject "OpenBook" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -292,9 +319,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9294C30D2A3A3A1F00135954 /* OpenLibrarian */,
-				9294C3202A3A3A2000135954 /* OpenLibrarianTests */,
-				9294C32A2A3A3A2000135954 /* OpenLibrarianUITests */,
+				9294C30D2A3A3A1F00135954 /* OpenBook */,
+				9294C3202A3A3A2000135954 /* OpenBookTests */,
+				9294C32A2A3A3A2000135954 /* OpenBookUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,19 +359,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9298C6FD2A76D1F600D9FCE2 /* ReferenceView.swift in Sources */,
 				92A295D62A67D28600ADAF10 /* DiscoverView.swift in Sources */,
 				92A295D42A67D27000ADAF10 /* AccountView.swift in Sources */,
+				9252E3F02A6EFC9B0003CE54 /* ReadingLogType.swift in Sources */,
+				9298C6FE2A76D1F600D9FCE2 /* LinksView.swift in Sources */,
 				92A295D02A67C64F00ADAF10 /* StarsView.swift in Sources */,
 				9294C3142A3A3A1F00135954 /* CollectionItem.swift in Sources */,
+				9231C5622A69AD52002CA42E /* TrendingSection.swift in Sources */,
+				9298C6FF2A76D1F600D9FCE2 /* ReviewView.swift in Sources */,
 				92B03AC02A3F684500BF0E28 /* LoginSheet.swift in Sources */,
+				9272F6C22A69B226007274AF /* SubjectsSection.swift in Sources */,
 				9217293A2A4360750016C18E /* CollectionItemListView.swift in Sources */,
 				92A295CE2A67C63C00ADAF10 /* RatingView.swift in Sources */,
+				9272F6C42A6A6E06007274AF /* SearchSection.swift in Sources */,
 				9294C3122A3A3A1F00135954 /* OpenLibrarianApp.swift in Sources */,
+				92131E952A76D123009BB934 /* _BookInformationView.swift in Sources */,
 				9294C3162A3A3A1F00135954 /* MainView.swift in Sources */,
 				92A295D22A67CB3E00ADAF10 /* LibraryView.swift in Sources */,
+				9289BFF02A6BDDCC00CC6AEF /* DiscoveryListItemView.swift in Sources */,
 				92B03AC22A3F6B5900BF0E28 /* BookView.swift in Sources */,
 				9217293C2A4374880016C18E /* CollectionView.swift in Sources */,
-				921729382A435C1E0016C18E /* LibraryRepository.swift in Sources */,
+				9298C6F92A76D1A300D9FCE2 /* GenreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,12 +406,12 @@
 /* Begin PBXTargetDependency section */
 		9294C3232A3A3A2000135954 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9294C30D2A3A3A1F00135954 /* OpenLibrarian */;
+			target = 9294C30D2A3A3A1F00135954 /* OpenBook */;
 			targetProxy = 9294C3222A3A3A2000135954 /* PBXContainerItemProxy */;
 		};
 		9294C32D2A3A3A2000135954 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9294C30D2A3A3A1F00135954 /* OpenLibrarian */;
+			target = 9294C30D2A3A3A1F00135954 /* OpenBook */;
 			targetProxy = 9294C32C2A3A3A2000135954 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -500,15 +536,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OpenLibrarian/OpenLibrarian.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OpenBook/OpenBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OpenLibrarian/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"OpenBook/Preview Content\"";
 				DEVELOPMENT_TEAM = B6S5V56E82;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = OpenLibrarian;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenBook;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -520,12 +557,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenLibrarian;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -540,15 +577,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OpenLibrarian/OpenLibrarian.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OpenBook/OpenBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OpenLibrarian/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"OpenBook/Preview Content\"";
 				DEVELOPMENT_TEAM = B6S5V56E82;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = OpenLibrarian;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenBook;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -560,12 +598,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenLibrarian;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -587,14 +625,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenLibrarianTests;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenLibrarian.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenLibrarian";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenBook";
 			};
 			name = Debug;
 		};
@@ -610,14 +648,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenLibrarianTests;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenLibrarian.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenLibrarian";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenBook";
 			};
 			name = Release;
 		};
@@ -632,14 +670,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenLibrarianUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OpenLibrarian;
+				TEST_TARGET_NAME = OpenBook;
 			};
 			name = Debug;
 		};
@@ -654,21 +692,21 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenLibrarianUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.OpenBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OpenLibrarian;
+				TEST_TARGET_NAME = OpenBook;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9294C3092A3A3A1F00135954 /* Build configuration list for PBXProject "OpenLibrarian" */ = {
+		9294C3092A3A3A1F00135954 /* Build configuration list for PBXProject "OpenBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9294C3332A3A3A2000135954 /* Debug */,
@@ -677,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9294C3352A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenLibrarian" */ = {
+		9294C3352A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9294C3362A3A3A2000135954 /* Debug */,
@@ -686,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9294C3382A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenLibrarianTests" */ = {
+		9294C3382A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenBookTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9294C3392A3A3A2000135954 /* Debug */,
@@ -695,7 +733,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9294C33B2A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenLibrarianUITests" */ = {
+		9294C33B2A3A3A2000135954 /* Build configuration list for PBXNativeTarget "OpenBookUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9294C33C2A3A3A2000135954 /* Debug */,

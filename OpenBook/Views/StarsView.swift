@@ -1,6 +1,6 @@
 //
 //  StarsView.swift
-//  OpenLibrarian
+//  OpenBook
 //
 //  Created by Sean Molenaar on 19/07/2023.
 //
@@ -17,6 +17,7 @@ struct StarsView: View {
                 Image(systemName: "star.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .shadow(radius: -1)
             }
         }
 
