@@ -10,7 +10,7 @@ import OpenLibraryKit
 
 struct TrendingSection: View {
     @State var items: [TrendingItem] = []
-    let api: OpenLibraryKit = OpenLibraryKit()
+    let api: OpenLibraryKit = OpenLibraryKit.shared
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,7 +21,7 @@ struct TrendingSection: View {
                 HStack {
                     ForEach(items, id: \.key) { item in
                         NavigationLink {
-                            BookView(work: item.olid)
+                            BookDetailView(work: item.olid).navigationTitle(item.title)
                         } label: {
                             DiscoveryListItemView(trendingItem: item)
                         }

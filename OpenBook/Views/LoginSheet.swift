@@ -9,15 +9,16 @@ import SwiftUI
 import OpenLibraryKit
 
 struct LoginSheet: View {
-    let api: OpenLibraryKit = OpenLibraryKit()
+    let api: OpenLibraryKit = OpenLibraryKit.shared
     @State var usernameField: String = ""
     @State var passwordField: String = ""
+    @State var errorText: String = ""
     @AppStorage("username") var username: String?
 
     var body: some View {
+        Text("Login")
+            .font(.title)
         Form {
-            Text("Login")
-                .font(.title)
             TextField("Username", text: $usernameField)
                 .textContentType(.username)
                 .textCase(.lowercase)
@@ -26,13 +27,14 @@ struct LoginSheet: View {
             #endif
             SecureField("Password", text: $passwordField)
                 .textContentType(.password)
+            Text(errorText)
             Button("Login", action: {
                 Task {
-                    let username = try? await api.auth.login(user: usernameField, secret: passwordField)
-                    guard let username = username else {
-                        return
+                    do {
+                        self.username = try await api.auth.login(user: usernameField, secret: passwordField)
+                    } catch {
+                        errorText = "Failed to login!"
                     }
-                    self.username = username
                 }
             })
         }.padding()

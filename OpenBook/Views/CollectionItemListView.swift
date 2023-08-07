@@ -10,23 +10,23 @@ import OpenLibraryKit
 
 struct CollectionItemListView: View {
     let title: String
-    let authors: [String]
+    let authors: Set<String>
     let image: URL?
 
     init(_ item: CollectionItem, thumbnail: Bool = false) {
         self.init(title: item.title,
-                  authors: item.authorNames ?? [],
+                  authors: item.authorNames ?? Set(),
                   image: thumbnail ? item.thumbnail : item.cover)
     }
 
     init(_ item: SearchResult) {
         let id = item.coverId ?? 0
         self.init(title: item.title,
-                  authors: item.authors ?? [],
+                  authors: Set(item.authors ?? []),
                   image: URL(string: "https://covers.openlibrary.org/b/id/\(id)-S.jpg?default=true"))
     }
 
-    init (title: String, authors: [String], image: URL?) {
+    init (title: String, authors: Set<String>, image: URL?) {
         self.title = title
         self.authors = authors
         self.image = image

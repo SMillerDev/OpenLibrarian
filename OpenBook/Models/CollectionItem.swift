@@ -6,32 +6,41 @@
 //
 
 import Foundation
-import SwiftData
+import CoreData
 import OpenLibraryKit
 
-@Model
-final class CollectionItem: ObservableObject {
-    @Attribute(.unique) var workId: String
-    @Attribute(.unique) var editionId: String
-    var title: String
-    var cover: URL?
-    var thumbnail: URL?
-    var authorNames: [String]?
-    var type: String
-    var start: Date?
-    var progress: Int?
+final class CollectionItem: NSManagedObject {
+    @NSManaged var workId: String
+    @NSManaged var editionId: String
+    @NSManaged var title: String
+    @NSManaged var cover: URL?
+    @NSManaged var thumbnail: URL?
+    @NSManaged var authorNames: Set<String>?
+    @NSManaged var type: String
+    @NSManaged var start: Date?
+    @NSManaged var progress: NSNumber?
 
-    init(workId: String, editionId: String, title: String, type: ReadingLogType) {
+    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+    }
+
+    init(context: NSManagedObjectContext) {
+        super.init(entity: CollectionItem.entity(), insertInto: context)
+    }
+
+    init(_ context: NSManagedObjectContext, workId: String, editionId: String, title: String, type: ReadingLogType) {
+        super.init(entity: CollectionItem.entity(), insertInto: context)
         self.workId = workId
         self.editionId = editionId
         self.title = title
         self.type = type.rawValue
     }
 
-    init(entry: ReadingLogEntry, type: ReadingLogType) {
+    init(_ context: NSManagedObjectContext, entry: ReadingLogEntry, type: ReadingLogType) {
+        super.init(entity: CollectionItem.entity(), insertInto: context)
         self.title = entry.work.title
         self.start = entry.loggedDate
-        self.authorNames = entry.work.authorNames
+        self.authorNames = Set(entry.work.authorNames)
         self.type = type.rawValue
         self.workId = entry.work.olid
         if let id = entry.loggedEdition?.replacingOccurrences(of: "/books/", with: "") {

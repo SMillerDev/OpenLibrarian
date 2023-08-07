@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DiscoverView: View {
+struct DiscoverPage: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack {
@@ -21,5 +21,5 @@ struct DiscoverView: View {
 }
 
 #Preview {
-    DiscoverView()
+    DiscoverPage()
 }

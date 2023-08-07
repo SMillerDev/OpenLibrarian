@@ -11,9 +11,9 @@ import OpenLibraryKit
 struct SearchSection: View {
     @State var searchText: String = ""
     @State var results: [SearchResult] = []
-    @State var task: Task<Void, Never>? = nil  // reference to the task
-    
-    let api: OpenLibraryKit = OpenLibraryKit()
+    @State var task: Task<Void, Never>?  // reference to the task
+
+    let api: OpenLibraryKit = OpenLibraryKit.shared
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,9 +29,9 @@ struct SearchSection: View {
                 Divider()
             }
             List {
-                ForEach(results, id: \.key) { result in
+                ForEach(results, id: \.olid) { result in
                     NavigationLink {
-                        BookView(work: result.olid)
+                        BookDetailView(work: result.olid).navigationTitle(result.title)
                     } label: {
                         CollectionItemListView(result)
                     }
@@ -40,14 +40,14 @@ struct SearchSection: View {
                 .listStyle(.plain)
             Divider()
         }
-        .onChange(of: searchText) {
+        .onChange(of: searchText) { text in
             self.task?.cancel()
-            if searchText.isEmpty || searchText.count < 3 {
+            if text.isEmpty || text.count < 3 {
                 results = []
                 return
             }
             self.task = Task {
-                let searchResults = try? await api.search.search(searchText)
+                let searchResults = try? await api.search.search(text)
                 if let results = searchResults, !Task.isCancelled {
                     print("\(results.count) search results")
                     self.results = results

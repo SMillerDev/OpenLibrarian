@@ -8,7 +8,7 @@
 import SwiftUI
 import OpenLibraryKit
 
-struct LinksView: View {
+struct LinksSection: View {
     @State var links: [LinkItem] = []
     var body: some View {
         List(links, id: \.url) { link in

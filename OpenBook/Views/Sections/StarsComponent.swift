@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StarsView: View {
+struct StarsComponent: View {
     let maxRating: Int
     @State var rating: Double
 
@@ -22,8 +22,8 @@ struct StarsView: View {
         }
 
         stars.overlay(
-            GeometryReader { g in
-                let width = CGFloat(rating) / CGFloat(maxRating) * g.size.width
+            GeometryReader { geo in
+                let width = CGFloat(rating) / CGFloat(maxRating) * geo.size.width
                 ZStack(alignment: .leading) {
                     Rectangle()
                         .frame(width: width)
@@ -37,5 +37,5 @@ struct StarsView: View {
 }
 
 #Preview {
-    StarsView(maxRating: 5, rating: 4.5)
+    StarsComponent(maxRating: 5, rating: 4.5)
 }

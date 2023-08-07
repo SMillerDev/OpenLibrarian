@@ -9,14 +9,14 @@ import SwiftUI
 import SwiftData
 import OpenLibraryKit
 
-fileprivate enum NavigationTabs: Int {
+private enum NavigationTabs: Int {
     case library = 0
     case discover = 1
     case user = 2
 }
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
+    @Environment(\.managedObjectContext) private var modelContext
     @State var presentLogin: Bool = false
     @State var tab: Int = 0
     @State var pick: ReadingLogType = ReadingLogType.reading
@@ -28,17 +28,17 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             TabView(selection: $tab) {
-                LibraryView()
+                LibraryPage().navigationTitle("Library")
                 .tabItem {
                     Label("Library", systemImage: "books.vertical")
                 }.tag(0)
-                DiscoverView()
+                DiscoverPage().navigationTitle("Discover")
                 .tabItem {
                     Label("Discover", systemImage: "rectangle.and.text.magnifyingglass")
                 }.tag(1)
-                AccountView()
+                AccountPage().navigationTitle(username ?? "User")
                 .tabItem {
                     Label(username ?? "User", systemImage: "person")
                 }.tag(2)
@@ -48,22 +48,22 @@ struct ContentView: View {
                 presentLogin.toggle()
                 return
             }
-        }.onChange(of: username) {
+        }.onChange(of: username, perform: { _ in
             presentLogin.toggle()
-        }
-        .onChange(of: tab) {
+        })
+        .onChange(of: tab, perform: { tab in
             switch tab {
             case NavigationTabs.library.rawValue:
                 navigationTitle = "library".capitalized
             case NavigationTabs.discover.rawValue:
                 navigationTitle = "discover".capitalized
             case NavigationTabs.user.rawValue:
-                navigationTitle = username?.capitalized ?? "user".capitalized
+                navigationTitle = username ?? "user".capitalized
             default:
                 navigationTitle = "????"
             }
 
-        }.sheet(isPresented: $presentLogin) {
+        }).sheet(isPresented: $presentLogin) {
             LoginSheet()
         }
     }
@@ -73,6 +73,6 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+// #Preview {
+//    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+// }

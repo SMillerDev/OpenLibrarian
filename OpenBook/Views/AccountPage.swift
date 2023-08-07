@@ -8,10 +8,10 @@
 import SwiftUI
 import OpenLibraryKit
 
-struct AccountView: View {
+struct AccountPage: View {
     @AppStorage("username") var username: String?
-    let api: OpenLibraryKit = OpenLibraryKit()
-    @State var profile: Profile? = nil
+    let api: OpenLibraryKit = OpenLibraryKit.shared
+    @State var profile: Profile?
 
     var body: some View {
         VStack {
@@ -31,5 +31,5 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView()
+    AccountPage()
 }

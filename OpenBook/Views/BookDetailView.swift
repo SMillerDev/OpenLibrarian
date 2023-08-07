@@ -8,45 +8,35 @@
 import SwiftUI
 import OpenLibraryKit
 
-struct BookView: View {
-    @State var work: Work? = nil
-    @State var edition: Edition? = nil
+struct BookDetailView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @State var work: Work?
+    @State var edition: Edition?
     @State var selectedType: String = ""
-    @State var pageProgressText: String = ""
-    @ObservedObject var item: CollectionItem
-    let api: OpenLibraryKit = OpenLibraryKit()
+    let api: OpenLibraryKit = OpenLibraryKit.shared
 
     let id: String
     let editionId: String?
     let started: Date?
     let showBorrow: Bool
-    let isReading: Bool
-    let pageProgress: Int
 
-    init(item: CollectionItem) {
-        self.init(work: item.workId, edition: item.editionId, started: item.start, selectedType: ReadingLogType(rawValue: item.type), pageProgress: item.progress ?? 0)
-        self.item = item
-    }
-
-    init(work: String, edition: String? = nil, started: Date? = nil, selectedType: ReadingLogType? = nil, pageProgress: Int = 0) {
+    init(work: String,
+         edition: String? = nil,
+         started: Date? = nil,
+         selectedType: ReadingLogType? = nil) {
         self.id = work
         self.editionId = edition
         self.started = started
         self.showBorrow = (selectedType == nil || selectedType == .wanted)
-        self.isReading = selectedType == .reading
         _selectedType = State(initialValue: selectedType?.rawValue ?? "")
-        self.pageProgress = pageProgress
-        self.item = CollectionItem(workId: work, editionId: edition!, title: "", type: selectedType!)
     }
 
     var imageView: some View {
         Group {
-            if let url = work?.getImage(size: "L", useDefault: false) ?? edition?.getImage(size: "L", useDefault: false) {
+            if let url = edition?.getImage(size: "L", useDefault: false) ?? work?.getImage(size: "L", useDefault: false) {
                 AsyncImage(url: url)
                     .padding(0)
-                if let pages = edition?.numberOfPages, isReading {
-                    ProgressView(value: Float(pageProgress), total: Float(pages))
-                }
             }
         }.padding(0)
     }
@@ -61,21 +51,8 @@ struct BookView: View {
             }.pickerStyle(.menu)
             if showBorrow {
                 Button("Borrow") {
-                    let _ = debugPrint("Borrow")
+                    let _ = debugPrint("Borrowed")
                 }
-            }
-        }
-    }
-
-    var authorView: some View {
-        HStack {
-            if let authors = edition?.authors, !authors.isEmpty {
-                
-                Label("By: ", systemImage: "person")
-                ForEach(authors, id: \.key) { author in
-                    Text(author.key)
-                        .textContentType(.name)
-                }.padding(5)
             }
         }
     }
@@ -86,7 +63,9 @@ struct BookView: View {
                 self.imageView
                 self.typeSelector
                 VStack(alignment: .leading) {
-                    self.authorView
+                    if let authors = edition?.authors ?? work?.authors.map({ $0.author }) {
+                        AuthorSection(authors)
+                    }
                     if let start = started {
                         HStack {
                             Label("Added on: ", systemImage: "clock")
@@ -97,11 +76,6 @@ struct BookView: View {
                     if let pages = edition?.numberOfPages {
                         HStack {
                             Label("Pages: ", systemImage: "book")
-                            if isReading {
-                                TextField("page", text: $pageProgressText)
-                                    .frame(maxWidth: 60)
-                                Text("/")
-                            }
                             Text(pages.description)
                                 .textContentType(.none)
                         }.padding(5)
@@ -119,12 +93,15 @@ struct BookView: View {
                     Text(desc)
                         .padding()
                 }
-                RatingView(workId: id)
+//                Divider()
+//                ReadingStatsSection(id: id)
+//                Divider()
+                RatingSection(workId: id)
 //                ReviewView()
                 Divider()
-                GenreView(genres: work?.subjects ?? [])
+                GenreSection(genres: work?.subjects ?? [])
                 if let links = work?.links {
-                    LinksView(links: links)
+                    LinksSection(links: links)
                 }
             }
         }.toolbar {
@@ -134,8 +111,7 @@ struct BookView: View {
                 ShareLink(item: URL(string: "https://openlibrary.org/works/\(id)")!)
             }
         }
-        .navigationTitle(edition?.title ?? work?.title ?? "")
-        .onChange(of: selectedType) {
+        .onChange(of: selectedType) { selectedType in
             var shelveId: BookShelveId = .wantToRead
             if selectedType == ReadingLogType.reading.rawValue {
                 shelveId = .reading
@@ -144,7 +120,20 @@ struct BookView: View {
             }
             debugPrint("Switched to shelve: \(selectedType)")
             Task {
-                try await OpenLibraryKit().books.setShelve(id: id, shelf: shelveId)
+                if let editions = try? await api.books.editions(id: id),
+                    let editionId = self.editionId ?? editions.first?.olid,
+                    let editionTitle = self.edition?.title ?? editions.first?.title {
+                    let item = CollectionItem(managedObjectContext,
+                                   workId: id,
+                                   editionId: editionId,
+                                   title: editionTitle,
+                                   type: ReadingLogType(rawValue: selectedType)!)
+                    item.start = Date()
+                    try? managedObjectContext.save()
+                }
+            }
+            Task {
+                try await api.books.setShelve(id: id, shelf: shelveId)
             }
         }
         .onAppear {
@@ -165,8 +154,6 @@ struct BookView: View {
                     self.work = work
                 }
             }
-        }.onChange(of: pageProgressText) {
-            let _ = debugPrint(pageProgressText)
-        }
+        }.toolbar(.hidden, for: .tabBar)
     }
 }

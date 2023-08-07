@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-struct GenreView: View {
+struct GenreSection: View {
     @State var genres: [String] = []
     var body: some View {
         List(genres, id: \.self) { genre in
             Text(genre)
         }
-        let _ = debugPrint(genres)
     }
 }

@@ -7,12 +7,12 @@
 
 import SwiftUI
 import OpenLibraryKit
+import CoreData
 
-struct LibraryView: View {
-    @Environment(\.modelContext) private var modelContext
+struct LibraryPage: View {
     @AppStorage("username") var username: String?
     @State private var selectedType: String = ReadingLogType.wanted.rawValue
-    let api: OpenLibraryKit = OpenLibraryKit()
+    let api: OpenLibraryKit = OpenLibraryKit.shared
 
     var body: some View {
         VStack {
@@ -21,17 +21,17 @@ struct LibraryView: View {
                     Text($0.rawValue)
                 }
             }.pickerStyle(.segmented)
-                .padding()
+            .padding()
             if selectedType == ReadingLogType.wanted.rawValue {
-                CollectionView(type: ReadingLogType.wanted)
+                CollectionShelveSection(type: ReadingLogType.wanted)
             } else if selectedType == ReadingLogType.reading.rawValue {
-                CollectionView(type: ReadingLogType.reading)
+                CollectionShelveSection(type: ReadingLogType.reading)
             } else if selectedType == ReadingLogType.read.rawValue {
-                CollectionView(type: ReadingLogType.read)
+                CollectionShelveSection(type: ReadingLogType.read)
             }
         }.refreshable {
             await refreshLibrary()
-        }.onChange(of: username) {
+        }.onChange(of: username) { _ in
             Task(priority: .background) {
                 await refreshLibrary()
             }
@@ -43,32 +43,41 @@ struct LibraryView: View {
             return
         }
         var returnItems: [CollectionItem] = []
+        let moc = PersistenceController.shared.container.newBackgroundContext()
 
         let read = try? await api.myBooks.read(user: user)
         read?.forEach { book in
-            if let _ = book.loggedEdition {
-                returnItems.append(CollectionItem(entry: book, type: .read))
+            if book.loggedEdition != nil {
+                returnItems.append(CollectionItem(moc, entry: book, type: .read))
             }
         }
         let wanted = try? await api.myBooks.wanted(user: user)
         wanted?.forEach { book in
-            if let _ = book.loggedEdition {
-                returnItems.append(CollectionItem(entry: book, type: .wanted))
+            if book.loggedEdition != nil {
+                returnItems.append(CollectionItem(moc, entry: book, type: .wanted))
             }
         }
         let reading = try? await api.myBooks.reading(user: user)
         reading?.forEach { book in
-            if let _ = book.loggedEdition {
-                returnItems.append(CollectionItem(entry: book, type: .reading))
+            if book.loggedEdition != nil {
+                returnItems.append(CollectionItem(moc, entry: book, type: .reading))
             }
         }
 
+        let fetchRequest: NSFetchRequest = CollectionItem.fetchRequest()
+
         returnItems.forEach { item in
-            modelContext.insert(item)
+            fetchRequest.predicate = NSPredicate(format: "editionId == %@", item.editionId)
+            guard let existing = try? moc.fetch(fetchRequest).first as? CollectionItem else {
+                moc.insert(item)
+                return
+            }
+            existing.title = item.title
         }
+        try? moc.save()
     }
 }
 
 #Preview {
-    LibraryView().modelContainer(for: CollectionItem.self, inMemory: true)
+    LibraryPage()
 }

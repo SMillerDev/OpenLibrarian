@@ -8,9 +8,9 @@
 import Foundation
 
 enum ReadingLogType: String, CaseIterable, Identifiable, CustomStringConvertible {
-    case wanted = "wanted"
-    case reading = "reading"
-    case read = "read"
+    case wanted
+    case reading
+    case read
 
     var id: String { self.rawValue }
     var description: String { self.rawValue }

@@ -10,7 +10,7 @@ import OpenLibraryKit
 
 struct SubjectsSection: View {
     let subject: String
-    let api: OpenLibraryKit = OpenLibraryKit()
+    let api: OpenLibraryKit = OpenLibraryKit.shared
     @State var items: [SubjectWork] = []
 
     var body: some View {
@@ -22,7 +22,7 @@ struct SubjectsSection: View {
                 HStack {
                     ForEach(items, id: \.key) { item in
                         NavigationLink {
-                            BookView(work: item.olid)
+                            BookDetailView(work: item.olid).navigationTitle(item.title)
                         } label: {
                             DiscoveryListItemView(work: item)
                         }

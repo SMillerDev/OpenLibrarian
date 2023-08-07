@@ -12,8 +12,7 @@ private struct BookInformationView: View {
     let authors: [TypeClass]
     let pages: Int?
     let started: Date?
-    @State var pageProgress: Int? = nil
-    
+    @State var pageProgress: Int?
 
     init(authors: [TypeClass], pages: Int?, started: Date?, pageProgress: Int) {
         self.authors = authors
